@@ -88,24 +88,78 @@
 {{--					<i class="iconfont nav_right">&#xe697;</i>--}}
 {{--				</a>--}}
 				<ul class="sub-menu">
-                    <li>
-                        <a href="javascript:;">
-                            <i class="iconfont">&#xe70b;</i>
-                            <cite>商品模块</cite>
-                            <i class="iconfont nav_right">&#xe697;</i></a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a onclick="xadmin.add_tab('会员删除','member-del.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>会员删除</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('等级管理','member-list1.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>等级管理</cite></a>
-                            </li>
-                        </ul>
-                    </li>
+					<li>
+						<a href="javascript:;">
+							<i class="iconfont">&#xe70b;</i>
+							<cite>一级菜单</cite>
+							<i class="iconfont nav_right">&#xe697;</i></a>
+						<ul class="sub-menu">
+							<li>
+								<a onclick="xadmin.add_tab('会员删除','member-del.html')" href="{{url('admin/shop_brand_add')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>一级菜单添加</cite></a>
+							</li>
+							<li>
+								<a onclick="xadmin.add_tab('等级管理','member-list1.html')" href="{{url('admin/shop_brand_list')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>一级菜单展示</cite></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="iconfont">&#xe70b;</i>
+							<cite>商品</cite>
+							<i class="iconfont nav_right">&#xe697;</i></a>
+						<ul class="sub-menu">
+							<li>
+								<a onclick="xadmin.add_tab('会员删除','member-del.html')" href="{{url('admin/shop_goods_add')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>商品添加</cite></a>
+							</li>
+							<li>
+								<a onclick="xadmin.add_tab('等级管理','member-list1.html')" href="{{url('admin/shop_goods_list')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>商品展示</cite></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="iconfont">&#xe70b;</i>
+							<cite>商品详情</cite>
+							<i class="iconfont nav_right">&#xe697;</i></a>
+						<ul class="sub-menu">
+							<li>
+								<a onclick="xadmin.add_tab('会员删除','member-del.html')" href="{{url('admin/goods_par_add')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>商品详情添加</cite></a>
+							</li>
+							<li>
+								<a onclick="xadmin.add_tab('等级管理','member-list1.html')" href="{{url('admin/goods_par_list')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>商品详情展示</cite></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="iconfont">&#xe70b;</i>
+							<cite>优惠劵</cite>
+							<i class="iconfont nav_right">&#xe697;</i></a>
+						<ul class="sub-menu">
+							<li>
+								<a onclick="xadmin.add_tab('会员删除','member-del.html')" href="{{url('admin/discounts_add')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>优惠券添加</cite></a>
+							</li>
+							<li>
+								<a onclick="xadmin.add_tab('等级管理','member-list1.html')" href="{{url('admin/discounts_list')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>优惠券展示</cite></a>
+							</li>
+						</ul>
+					</li>
                     <li>
 						<a href="javascript:;">
 							<i class="iconfont">&#xe70b;</i>
