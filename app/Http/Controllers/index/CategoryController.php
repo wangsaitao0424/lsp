@@ -30,11 +30,12 @@ class CategoryController extends Controller
             'user_pwd' => $pwd,
             'user_time' => time()
         ]);
-        if($data){
-            echo "<script>alert('注册成功，请登录');location.href='/admin/login/login';</script>";
+        if ($data){
+            $arr=["code"=>200,"msg"=>"注册成功，请点击确定跳转"];
         }else{
-            return redirect('admin/login/register');
+            $arr=["code"=>202,"msg"=>"注册失败，请点击确定跳转"];
         }
+        echo json_encode($arr);
     }
 
     /** 登录执行 */
@@ -47,13 +48,11 @@ class CategoryController extends Controller
         }
         $loginData = Admin_login::where(['user_name'=>$username,'user_pwd'=>$pwd])->first();
         session(['loginData'=>$loginData]);
-        if($loginData){
-            // echo 1;die;
-            echo "<script>alert('登录成功');location.href='/admin/index';</script>";
-            // return redirect();
+        if ($loginData){
+            $arr=["code"=>200,"msg"=>"注册成功，请点击确定跳转"];
         }else{
-            // echo 2;die;
-            echo "<script>alert('登录失败');location.href='/admin/login/login';</script>";
+            $arr=["code"=>202,"msg"=>"注册失败，请点击确定跳转"];
         }
+        echo json_encode($arr);
     }
 }
