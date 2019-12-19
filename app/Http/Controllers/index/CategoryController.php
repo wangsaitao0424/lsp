@@ -49,9 +49,9 @@ class CategoryController extends Controller
         $loginData = Admin_login::where(['user_name'=>$username,'user_pwd'=>$pwd])->first();
         session(['loginData'=>$loginData]);
         if ($loginData){
-            $arr=["code"=>200,"msg"=>"注册成功，请点击确定跳转"];
+            $arr=["code"=>200,"msg"=>"登录成功，请点击确定跳转"];
         }else{
-            $arr=["code"=>202,"msg"=>"注册失败，请点击确定跳转"];
+            $arr=["code"=>202,"msg"=>"登录失败，请点击确定跳转"];
         }
         echo json_encode($arr);
     }
