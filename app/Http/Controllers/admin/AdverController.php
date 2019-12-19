@@ -42,7 +42,7 @@ class AdverController extends Controller
      * uploadify 上传图片
      * @param Request $request
      */
-    public function upload(Request $request)
+    public function edit(Request $request)
     {
         $arrinfo=$_FILES['Filedata'];
         $tmpname=$arrinfo['tmp_name'];

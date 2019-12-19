@@ -35,7 +35,7 @@ Route::prefix('admin')->middleware(['Admin_Rbac'])->group(function(){
     //广告模块
     Route::any('/adver/adver_add','admin\AdverController@adver_add');//广告添加
     Route::any('/adver/adver_addDo','admin\AdverController@adver_addDo');//广告添加执行
-    Route::any('uploadss','admin\AdverController@upload');//广告添加
+    Route::any('edit','admin\AdverController@edit');//广告添加
     Route::any('/adver/adver_list','admin\AdverController@adver_list');//广告展示
     Route::any('/adver/adver_del','admin\AdverController@adver_del');//广告删除
     Route::any('/adver/adver_delInfo','admin\AdverController@adver_delInfo');//回复删除数据
