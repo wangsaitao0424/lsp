@@ -35,7 +35,7 @@ Route::prefix('admin')->middleware(['Admin_Rbac'])->group(function(){
     //广告模块
     Route::any('/adver/adver_add','admin\AdverController@adver_add');//广告添加
     Route::any('/adver/adver_addDo','admin\AdverController@adver_addDo');//广告添加执行
-    Route::any('upload','admin\AdverController@upload');//广告添加
+    Route::any('uploadss','admin\AdverController@upload');//广告添加
     Route::any('/adver/adver_list','admin\AdverController@adver_list');//广告展示
     Route::any('/adver/adver_del','admin\AdverController@adver_del');//广告删除
     Route::any('/adver/adver_delInfo','admin\AdverController@adver_delInfo');//回复删除数据
@@ -89,7 +89,7 @@ Route::prefix('admin')->middleware(['Admin_Rbac'])->group(function(){
     Route::get('discounts_del','admin\BrandController@discounts_del');//删除
     Route::get('discounts_shof','admin\BrandController@discounts_shof');//恢复
 
-    Route::any('upload','admin\BrandController@upload');//图片
+    Route::any('uploads','admin\BrandController@upload');//图片
     Route::any('char','admin\BrandController@char');//恢复
      //轮播图
     Route::any('char','admin\ViewController@char');

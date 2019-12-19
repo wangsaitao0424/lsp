@@ -121,7 +121,7 @@
             });
             $("#uploadify").uploadify({
                 'swf':"/uploadify/uploadify.swf",
-                'uploader':'/admin/upload',
+                'uploader':'/admin/uploads',
                 'onUploadSuccess':function (file,msg,data) {
                     let img="<img src='http://www.wangsaitao.com/"+msg+"' alt='waht' style='width: 100px;height: 100px'> <input type='hidden' name='goods_img' value='"+msg+"'>";
                     $("#show_img").append(img);
