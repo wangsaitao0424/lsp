@@ -133,7 +133,7 @@
         {{--});--}}
         $("#uploadify").uploadify({
             'swf':'/uploadify/uploadify.swf',
-            'uploader':'/admin/upload',
+            'uploader':'/admin/uploadss',
             'onUploadSuccess':function(file,data,msg){
                 $('#file').val("/"+data);
             }
