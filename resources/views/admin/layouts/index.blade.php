@@ -81,12 +81,6 @@
 
 	<div id="side-nav">
 		<ul id="nav">
-			<li>
-{{--				<a href="javascript:;">--}}
-{{--					<i class="iconfont left-nav-li" lay-tips="会员管理">&#xe6b8;</i>--}}
-{{--					<cite>商品模块</cite>--}}
-{{--					<i class="iconfont nav_right">&#xe697;</i>--}}
-{{--				</a>--}}
 				<ul class="sub-menu">
 					<li>
 						<a href="javascript:;">
@@ -178,42 +172,6 @@
 							</li>
 						</ul>
 					</li>
-{{--					 <li>--}}
-{{--						<a href="javascript:;">--}}
-{{--							<i class="iconfont">&#xe70b;</i>--}}
-{{--							<cite>用户留言管理</cite>--}}
-{{--							<i class="iconfont nav_right">&#xe697;</i></a>--}}
-{{--						<ul class="sub-menu">--}}
-{{--							<li>--}}
-{{--								<a onclick="xadmin.add_tab('会员删除','member-del.html')" href="tb_leaveword">--}}
-{{--									<i class="iconfont">&#xe6a7;</i>--}}
-{{--									<cite >用户留言添加</cite></a>--}}
-{{--							</li>--}}
-{{--							<li>--}}
-{{--								<a onclick="xadmin.add_tab('等级管理','member-list1.html')">--}}
-{{--									<i class="iconfont">&#xe6a7;</i>--}}
-{{--									<cite>用户留言展示展示</cite></a>--}}
-{{--							</li>--}}
-{{--						</ul>--}}
-{{--					</li>--}}
-{{--					<li>--}}
-{{--						<a href="javascript:;">--}}
-{{--							<i class="iconfont">&#xe70b;</i>--}}
-{{--							<cite>会员管理</cite>--}}
-{{--							<i class="iconfont nav_right">&#xe697;</i></a>--}}
-{{--						<ul class="sub-menu">--}}
-{{--							<li>--}}
-{{--								<a onclick="xadmin.add_tab('会员删除','member-del.html')">--}}
-{{--									<i class="iconfont">&#xe6a7;</i>--}}
-{{--									<cite>会员删除</cite></a>--}}
-{{--							</li>--}}
-{{--							<li>--}}
-{{--								<a onclick="xadmin.add_tab('等级管理','member-list1.html')">--}}
-{{--									<i class="iconfont">&#xe6a7;</i>--}}
-{{--									<cite>等级管理</cite></a>--}}
-{{--							</li>--}}
-{{--						</ul>--}}
-{{--					</li>--}}
 				</ul>
 				<ul class="sub-menu">
 					<li>
@@ -271,14 +229,6 @@
 						</ul>
 					</li>
 				</ul>
-			</li>
-			<li>
-				{{--				<a href="javascript:;">--}}
-				{{--					<i class="iconfont left-nav-li" lay-tips="会员管理">&#xe6b8;</i>--}}
-				{{--					<cite>广告模块</cite>--}}
-				{{--					<i class="iconfont nav_right">&#xe697;</i>--}}
-				{{--				</a>--}}
-
 			</li>
 		</ul>
 	</div>
