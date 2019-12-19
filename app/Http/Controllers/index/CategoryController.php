@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\index;
 use App\Model\Admin_login;
+use App\Model\ShopGoods;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\ShopBrand;
@@ -55,5 +56,12 @@ class CategoryController extends Controller
             $arr=["code"=>202,"msg"=>"登录失败，请点击确定跳转"];
         }
         echo json_encode($arr);
+    }
+
+    /** 商品接口 */
+    public function goods_do()
+    {
+        $goodsData = ShopGoods::get();
+        return json_encode($goodsData);
     }
 }
