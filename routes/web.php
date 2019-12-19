@@ -107,5 +107,21 @@ Route::prefix('admin')->middleware(['Admin_Rbac'])->group(function(){
      Route::any('add_del/{add_id}','admin\AddressController@add_del');
      Route::any('modify/{add_id}','admin\AddressController@modify');
      Route::any('modify_do','admin\AddressController@modify_do');
+    //sku
+    Route::get('attr_add','admin\AttrController@attr_add');//属性添加
+    Route::post('attr_do','admin\AttrController@attr_do');//属性添加执行
+    Route::get('attr_list','admin\AttrController@attr_list');//属性展示
+    Route::get('attr_goods_add','admin\AttrController@attr_goods_add');//属性商品添加
+    Route::post('attr_goods_do','admin\AttrController@attr_goods_do');//属性商品添加执行
+    Route::get('attr_goods_list','admin\AttrController@attr_goods_list');//属性商品展示
 });
 
+//前台 接口
+Route::any('/category_ad','index\CategoryController@category_ad');// 一级分类
+Route::any('/register_do','index\CategoryController@register_do'); // 注册接口
+Route::any('/login_do','index\CategoryController@login_do'); // 注册接口
+
+
+//上传图片 轮播图
+ Route::any('up','admin\ViewController@up');
+ Route::any('admin/upload','admin\ViewController@upload');

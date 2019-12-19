@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\index;
-
 use App\Model\Admin_login;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,17 +13,15 @@ class CategoryController extends Controller
     {
         $catData = ShopBrand::where(['is_show'=>1])->where(['shop_del'=>1])->orderBy('shop_id','DESC')->get();
         return json_encode($catData);
-
     }
-
-    //注册执行
     /** 执行 */
     public  function register_do()
     {
         $username = request()->input('user_name');
         $pwd = request()->input('user_pwd');
         if(empty($username) || empty($pwd)){
-            $arr=["code"=>202,"msg"=>"注册失败，请点击确定跳转"];
+         $arr=["code"=>202,"msg"=>"注册失败，请点击确定跳转"];
+          echo "<script>alert('用户名和密码不能为空');location.href='/admin/login/login';</script>";
         }
         // dd($username);
 //        $user_pwd = md5($pwd);
@@ -48,6 +45,7 @@ class CategoryController extends Controller
         $pwd = request()->input('user_pwd');
         if(empty($username) || empty($pwd)){
             $arr=["code"=>202,"msg"=>"登录失败，请点击确定跳转"];
+            echo "<script>alert('用户名和密码不能为空');location.href='/admin/login/login';</script>";
         }
         $loginData = Admin_login::where(['user_name'=>$username,'user_pwd'=>$pwd])->first();
         session(['loginData'=>$loginData]);

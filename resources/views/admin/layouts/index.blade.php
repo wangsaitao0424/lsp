@@ -139,6 +139,34 @@
 					<li>
 						<a href="javascript:;">
 							<i class="iconfont">&#xe70b;</i>
+							<cite>sku</cite>
+							<i class="iconfont nav_right">&#xe697;</i></a>
+						<ul class="sub-menu">
+							<li>
+								<a onclick="xadmin.add_tab('会员删除','member-del.html')" href="{{url('admin/attr_add')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>属性添加</cite></a>
+							</li>
+							<li>
+								<a onclick="xadmin.add_tab('等级管理','member-list1.html')" href="{{url('admin/attr_list')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>属性展示</cite></a>
+							</li>
+							<li>
+								<a onclick="xadmin.add_tab('会员删除','member-del.html')" href="{{url('admin/attr_goods_add')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>属性与商品添加</cite></a>
+							</li>
+							<li>
+								<a onclick="xadmin.add_tab('等级管理','member-list1.html')" href="{{url('admin/attr_goods_list')}}">
+									<i class="iconfont">&#xe6a7;</i>
+									<cite>属性与商品展示</cite></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="iconfont">&#xe70b;</i>
 							<cite>优惠劵</cite>
 							<i class="iconfont nav_right">&#xe697;</i></a>
 						<ul class="sub-menu">
