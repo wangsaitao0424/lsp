@@ -280,24 +280,6 @@
 				{{--				</a>--}}
 
 			</li>
-			<li>
-				<a href="javascript:;">
-					<i class="iconfont left-nav-li" lay-tips="城市联动">&#xe723;</i>
-					<cite>收货地址</cite>
-					<i class="iconfont nav_right">&#xe697;</i></a>
-				<ul class="sub-menu">
-					<li>
-						<a onclick="xadmin.add_tab('三级地区联动','city.html')" href="/addre">
-							<i class="iconfont">&#xe6a7;</i>
-							<cite>收货地址添加页</cite></a>
-					</li>
-					<li>
-						<a  href="/admin/address_list">
-							<i class="iconfont">&#xe6a7;</i>
-							<cite>收货地址展示</cite></a>
-					</li>
-				</ul>
-			</li>
 		</ul>
 	</div>
 </div>
