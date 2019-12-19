@@ -14,6 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//收货地址添加页
+Route::get('/addre', function () {
+    return view('admin.address.address');
+});
 /** 后台—登录—注册 */
 Route::prefix('admin')->namespace('admin')->group(function(){
     Route::any('login/login','LoginController@login'); // 登录
@@ -95,5 +100,12 @@ Route::prefix('admin')->middleware(['Admin_Rbac'])->group(function(){
     //轮播图删除
     Route::any('delete','admin\ViewController@delete');
     Route::any('char_list_shof','admin\ViewController@char_list_shof');
+
+     //收货地址
+     Route::any('addressed','admin\AddressController@add_do');
+     Route::any('address_list','admin\AddressController@address_list');
+     Route::any('add_del/{add_id}','admin\AddressController@add_del');
+     Route::any('modify/{add_id}','admin\AddressController@modify');
+     Route::any('modify_do','admin\AddressController@modify_do');
 });
 
