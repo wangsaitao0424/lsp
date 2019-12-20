@@ -38,7 +38,7 @@ class Token
             return json_encode(['code'=>202,'msg'=>'请重新登']);
         }
         //更新token有效期(业物)
-        $data->time=time()+7200;
+        $data->user_time=time()+7200;
         $data->save();
         return $data;
     }
