@@ -20,10 +20,12 @@ class GoodsController extends Controller
         $goodsData = ShopGoods::where(['goods_id'=>$goods_id])->first();
         $goodsAttrData=Attr::where('goods_id',$goods_id)->join('attr_goods','attr.attr_id','=','attr_goods.attr_id')->get();
         $goodsPar = GoodsPar::where(['goods_id'=>$goods_id])->first();
+        $value = session('loginData');
         return json_encode([
             'goodsData' => $goodsData,
             'goodsPar' => $goodsPar,
             'goodsAttrData' => $goodsAttrData,
+            'value' => $value,
         ]);
 
     }
