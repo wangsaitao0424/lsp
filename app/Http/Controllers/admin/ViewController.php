@@ -40,7 +40,7 @@ class ViewController extends Controller
    //轮播图展示
    public function list_char(Request $request)
    {
-      $list=DB::table("char")->paginate(2);
+      $list=DB::table("char")->paginate(4);
       return view("admin/indexa/list_char",['list'=>$list]);
    }
 

@@ -64,4 +64,11 @@ class CategoryController extends Controller
         $goodsData = ShopGoods::get();
         return json_encode($goodsData);
     }
+
+    /** 轮播图 */
+    public function char_do()
+    {
+        $charData = \DB::table('char')->where(['delete_at'=>1])->get();
+        return json_encode($charData);
+    }
 }

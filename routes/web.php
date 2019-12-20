@@ -119,8 +119,9 @@ Route::prefix('admin')->middleware(['Admin_Rbac'])->group(function(){
 //前台 接口
 Route::any('/category_ad','index\CategoryController@category_ad');// 一级分类
 Route::any('/register_do','index\CategoryController@register_do'); // 注册接口
-Route::any('/login_do','index\CategoryController@login_do'); // 注册接口
+Route::any('/login_do','index\CategoryController@login_do'); // 登录接口
 Route::any('/goods_do','index\CategoryController@goods_do'); // 商品接口
+Route::any('/char_do','index\CategoryController@char_do'); // 轮播图接口
 
 
 //上传图片 轮播图
