@@ -4,6 +4,7 @@ namespace App\Http\Controllers\index;
 
 use App\Model\Attr;
 use App\Model\AttrGoods;
+use App\Model\ShopGoods;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,7 +13,8 @@ class GoodsController extends Controller
     /** 商品详情 */
     public function goods_detail(Request $request)
     {
-        $goods_id = request('goods_id');
+        $goods_id = $_REQUEST['goods_id'];
+        $goodsData=ShopGoods::where('goods_id',$goods_id)->first();
         dd($goods_id);
     }
 
