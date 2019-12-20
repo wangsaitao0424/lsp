@@ -119,13 +119,17 @@ Route::prefix('admin')->middleware(['Admin_Rbac'])->group(function(){
 //前台 接口
 Route::any('/category_ad','index\CategoryController@category_ad');// 一级分类
 Route::any('/register_do','index\CategoryController@register_do'); // 注册接口
-Route::any('/login_do','index\CategoryController@login_do'); // 登录接口
+
 Route::any('/goods_do','index\CategoryController@goods_do'); // 商品接口
 Route::any('/char_do','index\CategoryController@char_do'); // 轮播图接口
 Route::any('/adver_do','index\CategoryController@adver_do'); // 广告图接口
 Route::any('/goods/goods_detail','index\GoodsController@goods_detail'); // 商品属性详情接口
 Route::any('/goods/goods_attr','index\GoodsController@goods_attr'); // 商品属性规格接口
-
+Route::any('/login_do','index\CategoryController@login_do'); // 接口  登录  token
+Route::middleware(['Token'])->group(function(){
+    Route::any('/info/','CategoryController@info');//  接口  登录  token
+    Route::any('/goods/attrCart','GoodsController@attrCart'); // 点击加入购物车
+});
 
 //上传图片 轮播图
  Route::any('up','admin\ViewController@up');

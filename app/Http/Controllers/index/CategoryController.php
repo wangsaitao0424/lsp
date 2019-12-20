@@ -45,20 +45,31 @@ class CategoryController extends Controller
     /** 登录执行 */
     public function login_do(Request $request)
     {
-        $username = request()->input('user_name');
-        $pwd = request()->input('user_pwd');
-        if(empty($username) || empty($pwd)){
-            $arr=["code"=>202,"msg"=>"登录失败，请点击确定跳转"];
-            echo "<script>alert('用户名和密码不能为空');location.href='/admin/login/login';</script>";
+        $username = $request->input('user_name');
+        $pwd = $request->input('user_pwd');
+        $data = Admin_login::where(['user_name'=>$username,'user_pwd'=>$pwd])->first();
+        $token = md5($data['user_id'].time());
+        $data->token = $token;
+        $data->time = time()+7200;
+        $data->save();
+        return json_encode(['code'=>200,'msg'=>'登录成功','data'=>$data]);
+    }
+    public function info(Request $request)
+    {
+        $token = $request->input("token");
+        // dd($token);
+        if(empty($token)){
+            return json_encode(['code'=>203,'msg'=>'用户名和密码不对']);
         }
-        $loginData = Admin_login::where(['user_name'=>$username,'user_pwd'=>$pwd])->first();
-        session(['loginData'=>$loginData]);
-        if ($loginData){
-            $arr=["code"=>200,"msg"=>"登录成功，请点击确定跳转"];
-        }else{
-            $arr=["code"=>202,"msg"=>"登录失败，请点击确定跳转"];
+        $data = ApiLogin::where(['token'=>$token])->first();
+        if (!$data) {
+            return json_encode(['code'=>201,'msg'=>'用户名和密码不对']);
         }
-        echo json_encode($arr);
+        if(time()>$data['time']){
+            return json_encode(['code'=>202,'msg'=>'请重新登']);
+        }
+
+        echo '问伟良';die;
     }
 
     /** 商品接口 */
