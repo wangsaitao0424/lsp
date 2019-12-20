@@ -14,7 +14,8 @@ class GoodsController extends Controller
     public function goods_detail(Request $request)
     {
         $goods_id = $_REQUEST['goods_id'];
-        $goodsData=ShopGoods::where('goods_id',$goods_id)->join('attr','attr_goods.attr_id','=','attr.attr_id')->first();
+//        $goods_id = 6;
+        $goodsData=Attr::where('goods_id',$goods_id)->join('attr_goods','attr.attr_id','=','attr_goods.attr_id')->get();
         return json_encode($goodsData);
 
     }
