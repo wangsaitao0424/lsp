@@ -50,7 +50,7 @@ class CategoryController extends Controller
         $data = Admin_login::where(['user_name'=>$username,'user_pwd'=>$pwd])->first();
         $token = md5($data['user_id'].time());
         $data->token = $token;
-        $data->time = time()+7200;
+        $data->user_time = time()+7200;
         $data->save();
         return json_encode(['code'=>200,'msg'=>'登录成功','data'=>$data]);
     }
@@ -61,11 +61,11 @@ class CategoryController extends Controller
         if(empty($token)){
             return json_encode(['code'=>203,'msg'=>'用户名和密码不对']);
         }
-        $data = ApiLogin::where(['token'=>$token])->first();
+        $data = Admin_login::where(['token'=>$token])->first();
         if (!$data) {
             return json_encode(['code'=>201,'msg'=>'用户名和密码不对']);
         }
-        if(time()>$data['time']){
+        if(time()>$data['user_time']){
             return json_encode(['code'=>202,'msg'=>'请重新登']);
         }
 

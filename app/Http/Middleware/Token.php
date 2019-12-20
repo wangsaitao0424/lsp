@@ -34,7 +34,7 @@ class Token
         if (!$data) {
             return json_encode(['code'=>201,'msg'=>'用户名和密码不对']);
         }
-        if(time()>$data['time']){
+        if(time()>$data['user_time']){
             return json_encode(['code'=>202,'msg'=>'请重新登']);
         }
         //更新token有效期(业物)
