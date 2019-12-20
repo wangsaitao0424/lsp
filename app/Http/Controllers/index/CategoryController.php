@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\index;
+use App\Model\Admin_adver;
 use App\Model\Admin_login;
 use App\Model\ShopGoods;
 use Illuminate\Http\Request;
@@ -68,7 +69,14 @@ class CategoryController extends Controller
     /** 轮播图 */
     public function char_do()
     {
-        $charData = \DB::table('char')->where(['delete_at'=>1])->get();
+        $charData = \DB::table('char')->where(['delete_at'=>1])->orderBy("ch_id","desc")->limit('4')->get();
         return json_encode($charData);
+    }
+
+    /** 广告接口 */
+    public function adver_do()
+    {
+        $adverData = Admin_adver::where(['is_del'=>1])->where(['is_show'=>1])->orderBy('ad_id','desc')->limit('1')->get();
+        return json_encode($adverData);
     }
 }

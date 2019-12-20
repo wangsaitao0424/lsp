@@ -122,6 +122,7 @@ Route::any('/register_do','index\CategoryController@register_do'); // 注册接�
 Route::any('/login_do','index\CategoryController@login_do'); // 登录接口
 Route::any('/goods_do','index\CategoryController@goods_do'); // 商品接口
 Route::any('/char_do','index\CategoryController@char_do'); // 轮播图接口
+Route::any('/adver_do','index\CategoryController@adver_do'); // 广告图接口
 
 
 //上传图片 轮播图
