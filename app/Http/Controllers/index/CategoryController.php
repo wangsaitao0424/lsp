@@ -7,6 +7,8 @@ use App\Model\ShopGoods;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\ShopBrand;
+use App\Model\Attr;
+use App\Model\AttrGoods;
 
 class CategoryController extends Controller
 {
@@ -78,5 +80,19 @@ class CategoryController extends Controller
     {
         $adverData = Admin_adver::where(['is_del'=>1])->where(['is_show'=>1])->orderBy('ad_id','desc')->limit('1')->get();
         return json_encode($adverData);
+    }
+
+    /** 商品属性规格 */
+    public function goods_attr()
+    {
+        $attrGoods = AttrGoods::get()->toArray();
+        $attr = Attr::join('attr_goods','attr.attr_id','=','attr_goods.attr_id')->get()->toArray();
+        foreach ($attr as $k=>$v){
+            $attr_id = $v['attr_id'];
+//            dd($attr_id);
+        }
+//        $attr_id = $attr['attr_id'];
+        $goods = ShopGoods::join('attr_goods','shop_goods.goods_id','=','attr_goods.goods_id')->get()->toArray();
+        dd($goods);
     }
 }
