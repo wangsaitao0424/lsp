@@ -15,7 +15,7 @@ class GoodsController extends Controller
     {
         $goods_id = $_REQUEST['goods_id'];
         $goodsData=ShopGoods::where('goods_id',$goods_id)->first();
-        dd($goods_id);
+        dd($goodsData);
     }
 
     /** 商品属性规格 */
