@@ -123,7 +123,8 @@ Route::any('/login_do','index\CategoryController@login_do'); // 登录接口
 Route::any('/goods_do','index\CategoryController@goods_do'); // 商品接口
 Route::any('/char_do','index\CategoryController@char_do'); // 轮播图接口
 Route::any('/adver_do','index\CategoryController@adver_do'); // 广告图接口
-Route::any('/goods_attr','index\CategoryController@goods_attr'); // 商品属性规格接口
+Route::any('/goods/goods_detail','index\GoodsController@goods_detail'); // 商品属性详情接口
+Route::any('/goods/goods_attr','index\GoodsController@goods_attr'); // 商品属性规格接口
 
 
 //上传图片 轮播图

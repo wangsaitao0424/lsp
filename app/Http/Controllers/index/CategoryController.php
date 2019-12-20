@@ -82,17 +82,5 @@ class CategoryController extends Controller
         return json_encode($adverData);
     }
 
-    /** 商品属性规格 */
-    public function goods_attr()
-    {
-        $attrGoods = AttrGoods::get()->toArray();
-        $attr = Attr::join('attr_goods','attr.attr_id','=','attr_goods.attr_id')->get()->toArray();
-        foreach ($attr as $k=>$v){
-            $attr_id = $v['attr_id'];
-//            dd($attr_id);
-        }
-//        $attr_id = $attr['attr_id'];
-        $goods = ShopGoods::join('attr_goods','shop_goods.goods_id','=','attr_goods.goods_id')->get()->toArray();
-        dd($goods);
-    }
+
 }
