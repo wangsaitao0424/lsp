@@ -38,4 +38,11 @@ class GoodsController extends Controller
 //        $goods = ShopGoods::join('attr_goods','shop_goods.goods_id','=','attr_goods.goods_id')->get()->toArray();
 //        dd($goods);
 //    }
+
+    /** 接受token 根据token查询  */
+    public function token(Request $request)
+    {
+        $token = request('token');
+        dd($token);
+    }
 }

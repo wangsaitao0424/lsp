@@ -130,6 +130,7 @@ Route::middleware(['Token'])->group(function(){
     Route::any('/info/','CategoryController@info');//  接口  登录  token
     Route::any('/goods/attrCart','GoodsController@attrCart'); // 点击加入购物车
 });
+Route::any('/login/token','GoodsController@token'); // 接受token  查询用户
 
 //上传图片 轮播图
  Route::any('up','admin\ViewController@up');
