@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\index;
 
+use App\Model\Admin_login;
 use App\Model\Attr;
 use App\Model\AttrGoods;
 use App\Model\GoodsPar;
@@ -43,6 +44,7 @@ class GoodsController extends Controller
     public function token(Request $request)
     {
         $token = $_REQUEST['token'];
-        dd($token);
+        $userData = Admin_login::where(['token'=>$token])->first();
+        return json_encode(['userData'=>$userData]);
     }
 }
