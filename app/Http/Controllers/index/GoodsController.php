@@ -93,10 +93,15 @@ class GoodsController extends Controller
         return json_encode(['code'=>200,'favData'=>$favData]);
     }
 
+    /**
+     * @param Request $request
+     * @return false|mixed|string
+     * 购物车列表
+     */
     public function cart_list(Request $request)
     {
         $req = $request->all();
-        $user_id = 6;
+        $user_id = $req['user_id'];
         $cartData = Cart::where(['user_id'=>$user_id])
                 ->join('shop_goods','shop_goods.goods_id','=','car.goods_id')
                 ->join('attr','car.attr_id','=','attr.attr_id')
