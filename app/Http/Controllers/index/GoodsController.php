@@ -54,13 +54,18 @@ class GoodsController extends Controller
     public function cart_do(Request $request)
     {
         $req = $request->all();
-        $carData = Cart::insert([
-            'user_id' => $req['user_id'],
-            'goods_id' => $req['goods_id'],
-            'car_num' => $req['car_num'],
-            'attr_id' => $req['attr_id'],
-            'car_time' => time()
-        ]);
+        if($req['a'] == 'a'){
+            // 进行累加
+            $carData = Cart::where(['car_id'=>$req['car_id']])->update(['car_num'=>$req['cart_nums']]);
+        }else{
+            $carData = Cart::insert([
+                'user_id' => $req['user_id'],
+                'goods_id' => $req['goods_id'],
+                'car_num' => $req['car_num'],
+                'attr_id' => $req['attr_id'],
+                'car_time' => time()
+            ]);
+        }
         if ($carData){
             return json_encode(['code'=>200,'msg'=>'加入购物车成功']);
         }else{
