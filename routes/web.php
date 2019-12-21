@@ -132,6 +132,7 @@ Route::middleware(['Token'])->group(function(){
 });
 Route::any('/login/token','index\GoodsController@token'); // 接受token  查询用户
 
+
 //上传图片 轮播图
  Route::any('up','admin\ViewController@up');
  Route::any('admin/upload','admin\ViewController@upload');
