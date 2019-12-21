@@ -47,4 +47,11 @@ class GoodsController extends Controller
         $userData = Admin_login::where(['token'=>$token])->first();
         return json_encode(['userData'=>$userData]);
     }
+
+    /** 点击加入购物车 */
+    public function cart_do(Request $request)
+    {
+        $req = $request->all();
+        dd($req);
+    }
 }

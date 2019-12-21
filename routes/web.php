@@ -131,7 +131,7 @@ Route::middleware(['Token'])->group(function(){
     Route::any('/goods/attrCart','index\GoodsController@attrCart'); // 点击加入购物车
 });
 Route::any('/login/token','index\GoodsController@token'); // 接受token  查询用户
-
+Route::any('/goods/cart_do','index\GoodsController@cart_do'); // 接受值  点击加入购入车
 
 //上传图片 轮播图
  Route::any('up','admin\ViewController@up');
