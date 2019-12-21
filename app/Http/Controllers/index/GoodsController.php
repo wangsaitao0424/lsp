@@ -83,4 +83,13 @@ class GoodsController extends Controller
             return json_encode(['code'=>203,'msg'=>'收藏失败']);
         }
     }
+
+    /** 收藏列表 */
+    public function collect_list(Request $request)
+    {
+        $req = $request->all();
+        $user_id = $req['user_id'];
+        $favData = Fav::where(['user_id'=>$user_id])->get();
+        return json_encode(['code'=>200,'favData'=>$favData]);
+    }
 }

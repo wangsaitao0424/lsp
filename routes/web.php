@@ -133,6 +133,7 @@ Route::middleware(['Token'])->group(function(){
 Route::any('/login/token','index\GoodsController@token'); // 接受token  查询用户
 Route::any('/goods/cart_do','index\GoodsController@cart_do'); // 接受值  点击加入购入车
 Route::any('/goods/collect_do','index\GoodsController@collect_do'); // 接受值  点击收藏
+Route::any('/goods/collect_list','index\GoodsController@collect_list'); // 接受值  查看收藏列表
 
 //上传图片 轮播图
  Route::any('up','admin\ViewController@up');
