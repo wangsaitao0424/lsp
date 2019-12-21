@@ -42,7 +42,7 @@ class GoodsController extends Controller
     /** 接受token 根据token查询  */
     public function token(Request $request)
     {
-        $token = request('token');
+        $token = $_REQUEST['token'];
         dd($token);
     }
 }

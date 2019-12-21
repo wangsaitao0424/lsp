@@ -127,10 +127,10 @@ Route::any('/goods/goods_detail','index\GoodsController@goods_detail'); // 商�
 Route::any('/goods/goods_attr','index\GoodsController@goods_attr'); // 商品属性规格接口
 Route::any('/login_do','index\CategoryController@login_do'); // 接口  登录  token
 Route::middleware(['Token'])->group(function(){
-    Route::any('/info/','CategoryController@info');//  接口  登录  token
-    Route::any('/goods/attrCart','GoodsController@attrCart'); // 点击加入购物车
+    Route::any('/info/','index\CategoryController@info');//  接口  登录  token
+    Route::any('/goods/attrCart','index\GoodsController@attrCart'); // 点击加入购物车
 });
-Route::any('/login/token','GoodsController@token'); // 接受token  查询用户
+Route::any('/login/token','index\GoodsController@token'); // 接受token  查询用户
 
 //上传图片 轮播图
  Route::any('up','admin\ViewController@up');
