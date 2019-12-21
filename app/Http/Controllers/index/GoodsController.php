@@ -5,6 +5,7 @@ namespace App\Http\Controllers\index;
 use App\Model\Admin_login;
 use App\Model\Attr;
 use App\Model\AttrGoods;
+use App\Model\Cart;
 use App\Model\GoodsPar;
 use App\Model\ShopGoods;
 use Illuminate\Http\Request;
@@ -52,6 +53,17 @@ class GoodsController extends Controller
     public function cart_do(Request $request)
     {
         $req = $request->all();
-        dd($req);
+        $carData = Cart::insert([
+            'user_id' => $req['user_id'],
+            'goods_id' => $req['goods_id'],
+            'car_num' => $req['car_num'],
+            'attr_id' => $req['attr_id'],
+            'car_time' => time()
+        ]);
+        if ($carData){
+            return json_encode(['code'=>200,'msg'=>'加入购物车成功']);
+        }else{
+            return json_encode(['code'=>203,'msg'=>'加入购物车失败']);
+        }
     }
 }
