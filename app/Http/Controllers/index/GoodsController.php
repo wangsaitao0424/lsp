@@ -92,4 +92,15 @@ class GoodsController extends Controller
         $favData = Fav::where(['user_id'=>$user_id])->get();
         return json_encode(['code'=>200,'favData'=>$favData]);
     }
+
+    public function cart_list(Request $request)
+    {
+        $req = $request->all();
+        $user_id = 6;
+        $cartData = Cart::where(['user_id'=>$user_id])
+                ->join('shop_goods','shop_goods.goods_id','=','car.goods_id')
+                ->join('attr','car.attr_id','=','attr.attr_id')
+                ->get();
+        return json_encode(['code'=>200,'cartData'=>$cartData]);
+    }
 }

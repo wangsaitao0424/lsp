@@ -134,6 +134,7 @@ Route::any('/login/token','index\GoodsController@token'); // 接受token  查询
 Route::any('/goods/cart_do','index\GoodsController@cart_do'); // 接受值  点击加入购入车
 Route::any('/goods/collect_do','index\GoodsController@collect_do'); // 接受值  点击收藏
 Route::any('/goods/collect_list','index\GoodsController@collect_list'); // 接受值  查看收藏列表
+Route::any('/goods/cart_list','index\GoodsController@cart_list'); // 购物车列表
 
 //上传图片 轮播图
  Route::any('up','admin\ViewController@up');
