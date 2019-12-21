@@ -6,6 +6,7 @@ use App\Model\Admin_login;
 use App\Model\Attr;
 use App\Model\AttrGoods;
 use App\Model\Cart;
+use App\Model\Fav;
 use App\Model\GoodsPar;
 use App\Model\ShopGoods;
 use Illuminate\Http\Request;
@@ -64,6 +65,22 @@ class GoodsController extends Controller
             return json_encode(['code'=>200,'msg'=>'加入购物车成功']);
         }else{
             return json_encode(['code'=>203,'msg'=>'加入购物车失败']);
+        }
+    }
+
+    /** 点击收藏 */
+    public function collect_do(Request $request)
+    {
+        $req = $request->all();
+        $favData = Fav::insert([
+            'user_id' => $req['user_id'],
+            'goods_id' => $req['goods_id'],
+            'fav_time' => time()
+        ]);
+        if ($favData){
+            return json_encode(['code'=>200,'msg'=>'收藏成功']);
+        }else{
+            return json_encode(['code'=>203,'msg'=>'收藏失败']);
         }
     }
 }
