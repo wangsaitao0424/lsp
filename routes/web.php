@@ -138,6 +138,7 @@ Route::any('/goods/cart_do','index\GoodsController@cart_do'); // 接受值  点�
 Route::any('/goods/collect_do','index\GoodsController@collect_do'); // 接受值  点击收藏
 Route::any('/goods/collect_list','index\GoodsController@collect_list'); // 接受值  查看收藏列表
 Route::any('/goods/collect_del','index\GoodsController@collect_del'); // 收藏 删除 单删  批删
+Route::any('/goods/login_lout','index\GoodsController@login_lout'); // 前台用户点击退出
 
 
 

@@ -139,7 +139,7 @@ class GoodsController extends Controller
         return json_encode(['code'=>200,'cartData'=>$cartData]);
     }
 
-    /** 收藏删除  单删  批删 */
+    /** 购物车删除  单删  批删 */
     public function cart_del(Request $request)
     {
         $req = $request->all();
@@ -161,5 +161,17 @@ class GoodsController extends Controller
             ]);
         }
 
+    }
+
+    /** 前台点击退出 */
+    public function login_lout(Request $request)
+    {
+        $req = $request->all();
+        $user_id = $req['user_id'];
+        $loginData = Admin_login::where(['user_id'=>$user_id])->update(['token'=>'null']);
+        return json_encode([
+           'code' => 200,
+            'msg' => '退出成功'
+        ]);
     }
 }
