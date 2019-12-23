@@ -136,6 +136,8 @@ Route::any('/goods/collect_do','index\GoodsController@collect_do'); // 接受值
 Route::any('/goods/collect_list','index\GoodsController@collect_list'); // 接受值  查看收藏列表
 Route::any('/goods/cart_list','index\GoodsController@cart_list'); // 购物车列表
 
+Route::any('/goods/collect_del','index\GoodsController@collect_del'); // 收藏搜索删除
+
 //上传图片 轮播图
  Route::any('up','admin\ViewController@up');
  Route::any('admin/upload','admin\ViewController@upload');

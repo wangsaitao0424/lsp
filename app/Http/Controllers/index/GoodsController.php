@@ -94,8 +94,16 @@ class GoodsController extends Controller
     {
         $req = $request->all();
         $user_id = $req['user_id'];
-        $favData = Fav::where(['user_id'=>$user_id])->get();
+        $favData = Fav::where(['user_id'=>$user_id])
+                    ->join('shop_goods','favorite.goods_id','=','shop_goods_id.goods_id')
+                    ->get();
         return json_encode(['code'=>200,'favData'=>$favData]);
+    }
+
+    /** 收藏删除    单删   批删 */
+    public function collect_del()
+    {
+
     }
 
     /**
