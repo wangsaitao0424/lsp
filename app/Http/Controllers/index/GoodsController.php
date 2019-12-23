@@ -108,6 +108,11 @@ class GoodsController extends Controller
         $fav_id = $req['fav_id'];
         if(empty($fav_id)){
             // 批删
+            $favDate = Fav::where(['user_id'=>$user_id])->delete();
+            return json_encode([
+                'code' => 200,
+                'msg' => '删除全部成功'
+            ]);
         }else{
             // 单删
             $favDate = Fav::where(['user_id'=>$user_id])->where(['fav_id'=>$fav_id])->delete();
