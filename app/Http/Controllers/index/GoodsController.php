@@ -143,6 +143,7 @@ class GoodsController extends Controller
     public function cart_del(Request $request)
     {
         $req = $request->all();
+        dd($req);
         $user_id = $req['user_id'];
         if(empty($req['car_id'])){
             // 批删
