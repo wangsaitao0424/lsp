@@ -143,24 +143,25 @@ class GoodsController extends Controller
     public function cart_del(Request $request)
     {
         $req = $request->all();
-        dd($req);
         $user_id = $req['user_id'];
-        if(empty($req['car_id'])){
-            // 批删
-            $cartDate = Cart::where(['user_id'=>$user_id])->delete();
-            return json_encode([
-                'code' => 200,
-                'msg' => '删除全部成功'
-            ]);
-        }else{
+        foreach ($req['bike'] as $k=>$v){
             // 单删
-            $car_id = $req['car_id'];
-            $cartDate = Fav::where(['user_id'=>$user_id])->where(['car_id'=>$car_id])->delete();
-            return json_encode([
+            $cartDate = Cart::where(['user_id'=>$user_id])->where(['car_id'=>$v])->delete();
+//
+        }
+        return json_encode([
                 'code' => 200,
                 'msg' => '删除成功'
             ]);
-        }
+//        $user_id = $req['user_id'];
+//        if(empty($req['car_id'])){
+//            // 批删
+//            $cartDate = Cart::where(['user_id'=>$user_id])->delete();
+//            return json_encode([
+//                'code' => 200,
+//                'msg' => '删除全部成功'
+//            ]);
+//        }
 
     }
 
