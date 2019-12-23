@@ -153,17 +153,9 @@ class GoodsController extends Controller
                 'code' => 200,
                 'msg' => '删除成功'
             ]);
-//        $user_id = $req['user_id'];
-//        if(empty($req['car_id'])){
-//            // 批删
-//            $cartDate = Cart::where(['user_id'=>$user_id])->delete();
-//            return json_encode([
-//                'code' => 200,
-//                'msg' => '删除全部成功'
-//            ]);
-//        }
-
     }
+
+    /**  */
 
     /** 前台点击退出 */
     public function login_lout(Request $request)
