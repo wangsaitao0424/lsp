@@ -121,22 +121,27 @@ Route::any('/category_ad','index\CategoryController@category_ad');// 一级分�
 Route::any('/register_do','index\CategoryController@register_do'); // 注册接口
 
 Route::any('/goods_do','index\CategoryController@goods_do'); // 商品接口
-Route::any('/char_do','index\CategoryController@char_do'); // 轮播图接口
-Route::any('/adver_do','index\CategoryController@adver_do'); // 广告图接口
 Route::any('/goods/goods_detail','index\GoodsController@goods_detail'); // 商品属性详情接口
 Route::any('/goods/goods_attr','index\GoodsController@goods_attr'); // 商品属性规格接口
+Route::any('/char_do','index\CategoryController@char_do'); // 轮播图接口
+Route::any('/adver_do','index\CategoryController@adver_do'); // 广告图接口
 Route::any('/login_do','index\CategoryController@login_do'); // 接口  登录  token
+Route::any('/login/token','index\GoodsController@token'); // 接受token  查询用户
 Route::middleware(['Token'])->group(function(){
     Route::any('/info/','index\CategoryController@info');//  接口  登录  token
     Route::any('/goods/attrCart','index\GoodsController@attrCart'); // 点击加入购物车
+    Route::any('/goods/cart_list','index\GoodsController@cart_list'); // 购物车列表
+    Route::any('/goods/cart_del');
 });
-Route::any('/login/token','index\GoodsController@token'); // 接受token  查询用户
+
 Route::any('/goods/cart_do','index\GoodsController@cart_do'); // 接受值  点击加入购入车
 Route::any('/goods/collect_do','index\GoodsController@collect_do'); // 接受值  点击收藏
 Route::any('/goods/collect_list','index\GoodsController@collect_list'); // 接受值  查看收藏列表
-Route::any('/goods/cart_list','index\GoodsController@cart_list'); // 购物车列表
+Route::any('/goods/collect_del','index\GoodsController@collect_del'); // 收藏删除
 
-Route::any('/goods/collect_del','index\GoodsController@collect_del'); // 收藏搜索删除
+
+
+
 
 //上传图片 轮播图
  Route::any('up','admin\ViewController@up');

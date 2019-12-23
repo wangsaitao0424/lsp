@@ -100,16 +100,29 @@ class GoodsController extends Controller
         return json_encode(['code'=>200,'favData'=>$favData]);
     }
 
-    /** 收藏删除    单删   批删 */
-    public function collect_del()
+    /** 收藏删除  单删  批删 */
+    public function collect_del(Request $request)
     {
-
+        $req = $request->all();
+        $user_id = $req['user_id'];
+        $fav_id = $req['fav_id'];
+        if(empty($fav_id)){
+            // 批删
+        }else{
+            // 单删
+            $favDate = Fav::where(['user_id'=>$user_id])->where(['fav_id'=>$fav_id])->delete();
+            return json_encode([
+                'code' => 200,
+                'msg' => '删除成功'
+            ]);
+        }
+        
     }
 
     /**
+     * 购物车列表
      * @param Request $request
      * @return false|mixed|string
-     * 购物车列表
      */
     public function cart_list(Request $request)
     {
