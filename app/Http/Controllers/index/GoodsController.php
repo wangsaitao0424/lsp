@@ -114,13 +114,13 @@ class GoodsController extends Controller
             ]);
         }else{
             // 单删
+            $fav_id = $req['fav_id'];
             $favDate = Fav::where(['user_id'=>$user_id])->where(['fav_id'=>$fav_id])->delete();
             return json_encode([
                 'code' => 200,
                 'msg' => '删除成功'
             ]);
         }
-        
     }
 
     /**
@@ -137,5 +137,29 @@ class GoodsController extends Controller
                 ->join('attr','car.attr_id','=','attr.attr_id')
                 ->get();
         return json_encode(['code'=>200,'cartData'=>$cartData]);
+    }
+
+    /** 收藏删除  单删  批删 */
+    public function cart_del(Request $request)
+    {
+        $req = $request->all();
+        $user_id = $req['user_id'];
+        if(empty($req['car_id'])){
+            // 批删
+            $cartDate = Cart::where(['user_id'=>$user_id])->delete();
+            return json_encode([
+                'code' => 200,
+                'msg' => '删除全部成功'
+            ]);
+        }else{
+            // 单删
+            $car_id = $req['car_id'];
+            $cartDate = Fav::where(['user_id'=>$user_id])->where(['car_id'=>$car_id])->delete();
+            return json_encode([
+                'code' => 200,
+                'msg' => '删除成功'
+            ]);
+        }
+
     }
 }
