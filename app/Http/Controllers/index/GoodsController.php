@@ -147,7 +147,7 @@ class GoodsController extends Controller
         foreach ($req['bike'] as $k=>$v){
             // 单删
             $cartDate = Cart::where(['user_id'=>$user_id])->where(['goods_id'=>$v])->delete();
-          dd($cartDate);
+//          dd($cartDate);
         }
         return json_encode([
                 'code' => 200,
