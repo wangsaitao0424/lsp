@@ -159,10 +159,12 @@ class GoodsController extends Controller
     public function cart_select(Request $request)
     {
         $req = $request->all();
+        $array=[];
         foreach($req as $key=>$value){
-//            foreach($value as $kk=>$vv){
-//                foreach($vv as $k=>$v){
-                    foreach($req as $p=>$t) if($key != $p && $value == $t) unset($req[$key]);
+            foreach($value as $kk=>$vv){
+                $array[$kk]=$vv;
+                foreach($vv as $k=>$v){
+                    foreach($array as $p=>$t) if($k != $p && $v == $t) unset($array[$k]);
 
 //                    if(in_array($v[$key], $tmp_arr))   //搜索$v[$key]是否在$tmp_arr数组中存在，若存在返回true
 //                    {
@@ -188,10 +190,10 @@ class GoodsController extends Controller
 //                        $goodsData = ShopGoods::where(['goods_id'=>$goods_id])->update(['goods_num'=>$goods_num]);
 //                        echo json_encode(['msg'=>111]);
 //                    }
-//                }
-//            }
+                }
+            }
         }
-        print_r($req);
+        print_r($array);
     }
 
     /** 前台点击退出 */
