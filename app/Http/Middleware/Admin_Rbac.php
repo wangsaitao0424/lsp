@@ -52,9 +52,9 @@ class Admin_Rbac
 //                dd($path);
             }
 //            dd($data);
-//            if(empty($data)){
-//                echo "<script>alert('您的权限不够，请联系更高一级管理员');location.href='/admin/index'</script>";
-//            }
+            if(empty($data)){
+                echo "<script>alert('您的权限不够，请联系更高一级管理员');location.href='/admin/index'</script>";
+            }
         }
         return $next($request);
     }

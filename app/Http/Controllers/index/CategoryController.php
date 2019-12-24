@@ -18,6 +18,18 @@ class CategoryController extends Controller
         $catData = ShopBrand::where(['is_show'=>1])->where(['shop_del'=>1])->orderBy('shop_id','DESC')->get();
         return json_encode($catData);
     }
+
+    /** 分类下的商品详情 */
+    public function cate_goods(Request $request)
+    {
+        $req = $request->all();
+        $shop_id = 2;
+        $shopData = ShopGoods::where(['shop_goods.shop_id'=>$shop_id])
+                    ->join('shop_brand','shop_goods.shop_id','=','shop_brand.shop_id')
+                    ->get();
+        dd($shopData);
+    }
+
     /** 执行 */
     public  function register_do()
     {

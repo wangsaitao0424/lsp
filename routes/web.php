@@ -141,6 +141,8 @@ Route::any('/goods/collect_list','index\GoodsController@collect_list'); // 接�
 Route::any('/goods/collect_del','index\GoodsController@collect_del'); // 收藏 删除 单删  批删
 Route::any('/goods/login_lout','index\GoodsController@login_lout'); // 前台用户点击退出
 
+Route::any('/cate/cate_goods','index\CategoryController@cate_goods'); // 分类 下的商品
+
 
 
 
