@@ -161,8 +161,9 @@ class GoodsController extends Controller
         $req = $request->all();
         foreach($req as $key=>$value){
             foreach($value as $kk=>$vv){
-                foreach($vv as $k=>$v){
-                    dd($v);
+//                foreach($vv as $k=>$v){
+                    foreach($req as $p=>$t) if($kk != $p && $vv == $t) unset($req[$kk]);
+
 //                    if(in_array($v[$key], $tmp_arr))   //搜索$v[$key]是否在$tmp_arr数组中存在，若存在返回true
 //                    {
 //                        unset($arr[$k]); //销毁一个变量  如果$tmp_arr中已存在相同的值就删除该值
@@ -170,26 +171,27 @@ class GoodsController extends Controller
 //                    else {
 //                        $tmp_arr[$k] = $v[$key];  //将不同的值放在该数组中保存
 //                    }
-                    $user_id = $v['user_id'];
-                    $goods_id = $v['goods_id'];
-                    $goodsData = ShopGoods::where(['goods_id'=>$goods_id])->first();
-                    $goods_num = $goodsData['goods_num'];
-                    $goods_name = $goodsData['goods_name'];
-                    $car_num = $v['car_num'];
-                    if($car_num >= $goods_num){
-                        echo json_encode(['code'=>202,'msg'=>$goods_name.'库存不足哦']);die;
-                    }else{
-//                        $car_num = $goods_num + $car_num;
-                        $carData = Cart::where(['user_id'=>$user_id])
-                            ->where(['goods_id'=>$goods_id])
-                            ->update(['car_num'=>$car_num]);
-                        $goods_num = $goods_num - $car_num;
-                        $goodsData = ShopGoods::where(['goods_id'=>$goods_id])->update(['goods_num'=>$goods_num]);
-                        echo json_encode(['msg'=>111]);
-                    }
-                }
+//                    $user_id = $v['user_id'];
+//                    $goods_id = $v['goods_id'];
+//                    $goodsData = ShopGoods::where(['goods_id'=>$goods_id])->first();
+//                    $goods_num = $goodsData['goods_num'];
+//                    $goods_name = $goodsData['goods_name'];
+//                    $car_num = $v['car_num'];
+//                    if($car_num >= $goods_num){
+//                        echo json_encode(['code'=>202,'msg'=>$goods_name.'库存不足哦']);die;
+//                    }else{
+////                        $car_num = $goods_num + $car_num;
+//                        $carData = Cart::where(['user_id'=>$user_id])
+//                            ->where(['goods_id'=>$goods_id])
+//                            ->update(['car_num'=>$car_num]);
+//                        $goods_num = $goods_num - $car_num;
+//                        $goodsData = ShopGoods::where(['goods_id'=>$goods_id])->update(['goods_num'=>$goods_num]);
+//                        echo json_encode(['msg'=>111]);
+//                    }
+//                }
             }
         }
+        print_r($req);
     }
 
     /** 前台点击退出 */
