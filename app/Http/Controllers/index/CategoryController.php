@@ -39,7 +39,7 @@ class CategoryController extends Controller
     {
         $req = $request->all();
         $shop_weight = $req['shop_weight'];
-        $goodsData = ShopGoods::where(['weight'=>$shop_weight])->orderBy("$shop_weight",'DESC')->get();
+        $goodsData = ShopGoods::where(['shop_weight'=>$shop_weight])->orderBy("$shop_weight",'DESC')->get();
         return json_encode(['code'=>200,'goodsData'=>$goodsData]);
     }
 
