@@ -159,7 +159,6 @@ class GoodsController extends Controller
     public function cart_select(Request $request)
     {
         $req = $request->all();
-        var_dump($req);
         echo 'num: '.count($req['data4']);
         print_r($req['data4']);
         echo "</br></br></br>";
@@ -167,6 +166,7 @@ class GoodsController extends Controller
         $serializeArrs = array_map('serialize',$rrr);
         $uniqueArrs = array_unique($serializeArrs);
         $unserializeArrs = array_map('unserialize',$uniqueArrs);
+        echo "<pre>";echo "<br>";
         print_r($unserializeArrs);
 //        foreach($req as $key=>$value){
 //            foreach($value as $kk=>$vv){
