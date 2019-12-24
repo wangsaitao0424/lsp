@@ -159,6 +159,7 @@ class GoodsController extends Controller
     public function cart_select(Request $request)
     {
         $req = $request->all();
+        dd($req);
         $user_id = $req['user_id'];
         dd($user_id);
     }
