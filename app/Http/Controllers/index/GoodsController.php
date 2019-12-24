@@ -159,6 +159,7 @@ class GoodsController extends Controller
     public function cart_select(Request $request)
     {
         $req = $request->all();
+        dd($req);
         foreach($req as $key=>$value){
             foreach($value as $kk=>$vv){
                 foreach($vv as $k=>$v){
