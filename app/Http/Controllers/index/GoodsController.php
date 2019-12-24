@@ -166,10 +166,10 @@ class GoodsController extends Controller
                     $carData = Cart::where(['user_id'=>$user_id])
                                 ->where(['goods_id'=>$v['goods_id']])
                                 ->update(['car_num'=>$v['car_num']]);
-                    return json_encode([
-                        'code' =>200,
-                       'carData' => $carData
-                    ]);
+//                    return json_encode([
+//                        'code' =>200,
+//                       'carData' => $carData
+//                    ]);
                 }
             }
         }
