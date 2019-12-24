@@ -161,7 +161,7 @@ class GoodsController extends Controller
         $req = $request->all();
             foreach($req as $kk=>$vv){
                 foreach($vv as $k=>$v){
-                    dd($v);
+//                    dd($v);
                     $user_id = $v['user_id'];
                     $goods_id = $v['goods_id'];
                     $goodsData = ShopGoods::where(['goods_id'=>$goods_id])->first();
