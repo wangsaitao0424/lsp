@@ -158,7 +158,9 @@ class GoodsController extends Controller
     /** 购物车全选 改变价格 数量 */
     public function cart_select(Request $request)
     {
-        
+        $req = $request->all();
+        $user_id = $req['user_id'];
+        dd($user_id);
     }
 
     /** 前台点击退出 */
