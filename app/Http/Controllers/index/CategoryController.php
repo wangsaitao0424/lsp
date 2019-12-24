@@ -72,7 +72,7 @@ class CategoryController extends Controller
         echo '问伟良';die;
     }
 
-    /** 商品接口 */
+    /** 商品 查询 接口 */
     public function goods_do()
     {
         $goodsData = ShopGoods::get();

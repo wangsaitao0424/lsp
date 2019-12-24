@@ -156,6 +156,10 @@ class GoodsController extends Controller
     }
 
     /**  */
+    public function cart_select(Request $request)
+    {
+
+    }
 
     /** 前台点击退出 */
     public function login_lout(Request $request)

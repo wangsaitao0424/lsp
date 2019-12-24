@@ -123,7 +123,7 @@ class RbacController extends Controller
     /** 权限展示 */
     public function quan_list()
     {
-        $data = Admin_quan::get();
+        $data = Admin_quan::paginate(5);
 //        dd($data);
 
         return view('/admin/rbac/quan_list',['data'=>$data]);

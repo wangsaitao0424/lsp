@@ -132,6 +132,7 @@ Route::middleware(['Token'])->group(function(){
     Route::any('/goods/attrCart','index\GoodsController@attrCart'); // 点击加入购物车
     Route::any('/goods/cart_list','index\GoodsController@cart_list'); // 购物车列表
     Route::any('/goods/cart_del','index\GoodsController@cart_del'); // 购物车删除  单删  批删
+    Route::any('/goods/cart_select','index\GoodsController@cart_select'); // 购物车
 });
 
 Route::any('/goods/cart_do','index\GoodsController@cart_do'); // 接受值  点击加入购入车

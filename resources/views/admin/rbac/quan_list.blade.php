@@ -38,4 +38,7 @@
             @endforeach
         </table>
     </div>
+    <div class="pull-right">
+        {{ $data -> links() }}
+    </div>
 @endsection
