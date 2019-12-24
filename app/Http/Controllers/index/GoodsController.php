@@ -177,7 +177,7 @@ class GoodsController extends Controller
                             ->update(['car_num'=>$car_num]);
                         $goods_num = $goods_num - $car_num;
                         $goodsData = ShopGoods::where(['goods_id'=>$goods_id])->update(['goods_num'=>$goods_num]);
-//                        return json_encode(['msg'=>111]);
+                        echo json_encode(['msg'=>111]);
                     }
                 }
             }
