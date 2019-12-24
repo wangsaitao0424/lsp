@@ -163,7 +163,13 @@ class GoodsController extends Controller
             foreach($value as $kk=>$vv){
                 foreach($vv as $k=>$v){
                     $user_id = $v['user_id'];
-                    dd($user_id);
+                    $carData = Cart::where(['user_id'=>$user_id])
+                                ->where(['goods_id'=>$v['goods_id']])
+                                ->update(['car_num'=>$v['car_num']]);
+                    return json_encode([
+                        'code' =>200,
+                       'carData' => $carData
+                    ]);
                 }
             }
         }
