@@ -160,10 +160,10 @@ class GoodsController extends Controller
     {
         $req = $request->all();
         var_dump($req);
-        echo 'num: '.count($req['array']);
-        print_r($req['array']);
+        echo 'num: '.count($req['data4']);
+        print_r($req['data4']);
         echo "</br></br></br>";
-        $rrr = $req['array'];
+        $rrr = $req['data4'];
         $serializeArrs = array_map('serialize',$rrr);
         $uniqueArrs = array_unique($serializeArrs);
         $unserializeArrs = array_map('unserialize',$uniqueArrs);
