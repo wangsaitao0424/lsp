@@ -159,10 +159,7 @@ class GoodsController extends Controller
     public function cart_select(Request $request)
     {
         $req = $request->all();
-        dd($req);
-        foreach($req as $key=>$value){
-            foreach($value as $kk=>$vv){
-                foreach($vv as $k=>$v){
+                foreach($req as $k=>$v){
                     $user_id = $v['user_id'];
                     $goods_id = $v['goods_id'];
                     $goodsData = ShopGoods::where(['goods_id'=>$goods_id])->first();
@@ -181,8 +178,6 @@ class GoodsController extends Controller
                         echo json_encode(['msg'=>111]);
                     }
                 }
-            }
-        }
     }
 
     /** 前台点击退出 */
