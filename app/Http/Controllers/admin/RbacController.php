@@ -123,7 +123,7 @@ class RbacController extends Controller
     /** 权限展示 */
     public function quan_list()
     {
-        $data = Admin_quan::paginate(5);
+        $data = Admin_quan::paginate(6);
 //        dd($data);
 
         return view('/admin/rbac/quan_list',['data'=>$data]);
@@ -169,7 +169,7 @@ class RbacController extends Controller
     {
         $data = Admin_quanJue::join('admin_jue','admin_quanJue.j_id','=','admin_jue.j_id')
             ->join('admin_quan','admin_quanJue.q_id','=','admin_quan.q_id')
-            ->get();
+            ->paginate(6);
 //        dd($data);
 
         return view('/admin/rbac/quanJue_list',['data'=>$data]);
