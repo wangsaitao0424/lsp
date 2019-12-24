@@ -166,10 +166,15 @@ class GoodsController extends Controller
                     $goods_id = $v['goods_id'];
                     $goodsData = ShopGoods::where(['goods_id'=>$goods_id])->first();
                     $goods_num = $goodsData['goods_num'];
-                    dd($goods_num);
-                    $carData = Cart::where(['user_id'=>$user_id])
-                                ->where(['goods_id'=>$goods_id])
-                                ->update(['car_num'=>$v['car_num']]);
+                    $goods_name = $goodsData['goods_name'];
+                    if($v['car_num'] <= $goods_num){
+                        return json_encode(['code'=>202,'msg'=>$goods_name.'库存不足哦',]);
+                    }else{
+                        $carData = Cart::where(['user_id'=>$user_id])
+                            ->where(['goods_id'=>$goods_id])
+                            ->update(['car_num'=>$v['car_num']]);
+                    }
+
 //                    return json_encode([
 //                        'code' =>200,
 //                       'carData' => $carData
