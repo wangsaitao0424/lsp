@@ -159,6 +159,7 @@ class GoodsController extends Controller
     public function cart_select(Request $request)
     {
         $req = $request->all();
+        var_dump($req);
         echo 'num: '.count($req['array']);
         print_r($req['array']);
         echo "</br></br></br>";
