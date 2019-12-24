@@ -161,7 +161,8 @@ class GoodsController extends Controller
         $req = $request->all();
         foreach($req as $key=>$value){
             foreach($value as $kk=>$vv){
-                var_dump($vv);
+                $user_id = $vv['user_id'];
+                dd($user_id);
             }
         }
     }
