@@ -173,7 +173,7 @@ class GoodsController extends Controller
                             ->where(['goods_id'=>$goods_id])
                             ->update(['car_num'=>$car_num]);
                         $goods_num = $goods_num - $car_num;
-                        $goodsData = ShopGoods::where(['goods_id'=>$goods_id])->update(['goods_num'=>$goods_num]);
+                        $goodData = ShopGoods::where(['goods_id'=>$goods_id])->update(['goods_num'=>$goods_num]);
 
                 }
             }
