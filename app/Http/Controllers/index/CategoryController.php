@@ -38,8 +38,8 @@ class CategoryController extends Controller
     public function cate_order(Request $request)
     {
         $req = $request->all();
-        $shop_weight = $req['shop_weight'];
-        $goodsData = ShopGoods::where(['shop_weight'=>$shop_weight])->orderBy("$shop_weight",'DESC')->get();
+        $shop_id = $req['shop_id'];
+        $goodsData = ShopGoods::where(['shop_id'=>$shop_id])->orderBy("$shop_id",'DESC')->get();
         return json_encode(['code'=>200,'goodsData'=>$goodsData]);
     }
 
