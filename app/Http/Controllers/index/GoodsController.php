@@ -162,8 +162,9 @@ class GoodsController extends Controller
         foreach($req as $key=>$value){
             foreach($value as $kk=>$vv){
                 foreach($vv as $k=>$v){
-                    $user_id = $vv['user_id'];
-                    dd($user_id);
+                    dd($v);
+//                    $user_id = $vv['user_id'];
+//                    dd($user_id);
                 }
             }
         }
