@@ -27,7 +27,11 @@ class CategoryController extends Controller
         $shopData = ShopGoods::where(['shop_goods.shop_id'=>$shop_id])
                     ->join('shop_brand','shop_goods.shop_id','=','shop_brand.shop_id')
                     ->get();
-        dd($shopData);
+        return json_encode([
+            'code' => 200,
+            'shopData' => $shopData
+        ]);
+//        dd($shopData);
     }
 
     /** 执行 */
