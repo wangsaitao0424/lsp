@@ -159,11 +159,10 @@ class GoodsController extends Controller
     public function cart_select(Request $request)
     {
         $req = $request->all();
-        $res = json_decode($req,true);
-        echo 'num: '.count($res['result']);
-        print_r($res['result']);
+        echo 'num: '.count($req['array']);
+        print_r($req['array']);
         echo "</br></br></br>";
-        $rrr = $res['result'];
+        $rrr = $req['array'];
         $serializeArrs = array_map('serialize',$rrr);
         $uniqueArrs = array_unique($serializeArrs);
         $unserializeArrs = array_map('unserialize',$uniqueArrs);
