@@ -160,9 +160,9 @@ class GoodsController extends Controller
     {
         $req = $request->all();
         foreach($req as $key=>$value){
-            foreach($value as $kk=>$vv){
+//            foreach($value as $kk=>$vv){
 //                foreach($vv as $k=>$v){
-                    foreach($req as $p=>$t) if($kk != $p && $vv == $t) unset($req[$kk]);
+                    foreach($req as $p=>$t) if($key != $p && $value == $t) unset($req[$key]);
 
 //                    if(in_array($v[$key], $tmp_arr))   //搜索$v[$key]是否在$tmp_arr数组中存在，若存在返回true
 //                    {
@@ -189,7 +189,7 @@ class GoodsController extends Controller
 //                        echo json_encode(['msg'=>111]);
 //                    }
 //                }
-            }
+//            }
         }
         print_r($req);
     }
