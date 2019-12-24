@@ -159,7 +159,8 @@ class GoodsController extends Controller
     public function cart_select(Request $request)
     {
         $req = $request->all();
-                foreach($req as $k=>$v){
+            foreach($req as $kk=>$vv){
+                foreach($vv as $k=>$v){
                     dd($v);
                     $user_id = $v['user_id'];
                     $goods_id = $v['goods_id'];
@@ -179,6 +180,7 @@ class GoodsController extends Controller
                         echo json_encode(['msg'=>111]);
                     }
                 }
+            }
     }
 
     /** 前台点击退出 */
