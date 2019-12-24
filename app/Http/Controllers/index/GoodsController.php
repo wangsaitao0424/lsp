@@ -169,7 +169,7 @@ class GoodsController extends Controller
                     $goods_name = $goodsData['goods_name'];
                     $car_num = $v['car_num'];
                     if($v['car_num'] >= $goods_num){
-                        return json_encode(['code'=>202,'msg'=>$goods_name.'库存不足哦',]);
+                        return json_encode(['code'=>202,'msg'=>$goods_name.'库存不足哦']);
                     }else{
                         $carData = Cart::where(['user_id'=>$user_id])
                             ->where(['goods_id'=>$goods_id])
