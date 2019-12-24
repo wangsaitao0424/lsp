@@ -34,6 +34,13 @@ class CategoryController extends Controller
 //        dd($shopData);
     }
 
+    /** 分类 下的排序 */
+    public function cate_order(Request $request)
+    {
+        $req = $request->all();
+        dd($req);
+    }
+
     /** 执行 */
     public  function register_do()
     {
