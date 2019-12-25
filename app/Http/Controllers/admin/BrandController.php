@@ -242,7 +242,7 @@ class BrandController extends Controller
      */
     public function goods_par_list()
     {
-        $list=GoodsPar::join('shop_goods','goods_par.goods_id','=','shop_goods.goods_id')->paginate(3);
+        $list=GoodsPar::join('shop_goods','goods_par.goods_id','=','shop_goods.goods_id')->paginate(1);
         return  view('admin.par.goods_par_list',['list'=>$list]);
     }
 
